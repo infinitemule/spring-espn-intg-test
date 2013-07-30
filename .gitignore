@@ -1,0 +1,32 @@
+
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+
+*.jar
+*.war
+
+# Eclipse
+.classpath
+.project
+.settings
+.cache
+
+target/
+
+# Don't add API key to git!
+espn-api-key.properties
+
+# Ignore integration tests for now
+src/intg
+
