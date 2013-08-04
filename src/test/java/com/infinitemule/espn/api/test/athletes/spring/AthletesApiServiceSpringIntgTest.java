@@ -14,6 +14,7 @@ import com.infinitemule.espn.api.athletes.spring.AthletesApiServiceSpring;
 import com.infinitemule.espn.api.sports.League;
 import com.infinitemule.espn.api.sports.Sport;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
+import com.infinitemule.espn.common.api.Groups;
 import com.infinitemule.espn.common.api.Leagues;
 import com.infinitemule.espn.common.api.Sports;
 
@@ -43,6 +44,18 @@ public class AthletesApiServiceSpringIntgTest extends AbstractApiServiceSpringIn
     AthletesApiRequest request = new AthletesApiRequest() 
       .sport(Sports.Racing)
       .league(Leagues.NASCAR);
+      
+    output(srv.call(request));    
+  }
+  
+  
+  @Test
+  public void sportLeagueGroup() {
+    
+    AthletesApiRequest request = new AthletesApiRequest() 
+      .sport(Sports.Football)
+      .league(Leagues.NFL)
+      .groups(Groups.AFC_EAST);
       
     output(srv.call(request));    
   }
