@@ -1,5 +1,5 @@
-Spring ESPN - Integeration Tests
-================================
+Spring ESPN - Integration Tests
+===============================
 
 Integration tests for [Spring ESPN](https://gihub.com/infinitemule/spring-espn)
 
