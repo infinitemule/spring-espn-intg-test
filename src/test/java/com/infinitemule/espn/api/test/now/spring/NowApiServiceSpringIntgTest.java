@@ -14,6 +14,7 @@ import com.infinitemule.espn.api.now.NowApiService;
 import com.infinitemule.espn.api.now.NowLeague;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
 import com.infinitemule.espn.common.api.Image;
+import com.infinitemule.espn.common.api.Language;
 import com.infinitemule.espn.common.api.NewsCategory;
 import com.infinitemule.espn.common.api.Teams;
 import com.infinitemule.espn.common.api.Video;
@@ -83,6 +84,17 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
       .now()
       .league(NowLeague.MLB)
       .teams(Teams.MLB.BOS);
+        
+    output(srv.call(request));
+  }
+  
+  
+  @Test
+  public void nowLanguage() {
+    
+    NowApiRequest request = new NowApiRequest()
+      .now()      
+      .language(Language.Spanish);
         
     output(srv.call(request));
   }
