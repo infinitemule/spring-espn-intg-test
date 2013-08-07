@@ -52,7 +52,7 @@
         <version>2.15</version>
         <configuration>
           <includes>
-            <include>**/*IntgTest.java</include>
+            <include>**/*IntgTestSuite.java</include>
           </includes>
         </configuration>
         <executions>
