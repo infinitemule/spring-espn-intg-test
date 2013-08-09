@@ -24,10 +24,21 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
   @Test
   public void newsAllCities() {
     
-    HeadlinesApiRequest req = new HeadlinesApiRequest().news().forCities();
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .news().forCities();
         
     output(srv.call(req));    
   }
+  
+  @Test
+  public void headlinesAllCities() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines().forCities();
+        
+    output(srv.call(req));    
+  }
+  
   
   
   private void output(HeadlinesApiResponse response) {
