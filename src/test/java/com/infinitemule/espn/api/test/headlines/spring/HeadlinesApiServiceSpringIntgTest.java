@@ -15,6 +15,7 @@ import com.infinitemule.espn.api.headlines.HeadlinesApiResponse;
 import com.infinitemule.espn.api.headlines.spring.HeadlinesApiServiceSpring;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
 import com.infinitemule.espn.common.api.City;
+import com.infinitemule.espn.common.api.FantasySport;
 
 public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTest {
 
@@ -63,6 +64,41 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
     output(srv.call(req));    
   }
   
+  /*
+   * 
+   */
+  
+  @Test
+  public void newsForEspnW() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines()
+        .forEspnW();
+    
+    output(srv.call(req));    
+  }
+
+
+  @Test
+  public void newsForAllFantasy() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines()
+        .forFantasySports();
+
+    output(srv.call(req)); 
+  }
+  
+  
+  @Test
+  public void newsForFantasySport() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+      .headlines()
+      .forFantasySport(FantasySport.Baseball);
+
+    output(srv.call(req)); 
+  }
   
   
   private void output(HeadlinesApiResponse response) {
