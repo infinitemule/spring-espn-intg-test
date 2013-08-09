@@ -14,6 +14,7 @@ import com.infinitemule.espn.api.headlines.HeadlinesApiRequest;
 import com.infinitemule.espn.api.headlines.HeadlinesApiResponse;
 import com.infinitemule.espn.api.headlines.spring.HeadlinesApiServiceSpring;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
+import com.infinitemule.espn.common.api.City;
 
 public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTest {
 
@@ -30,11 +31,34 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
     output(srv.call(req));    
   }
   
+  
   @Test
   public void headlinesAllCities() {
     
     HeadlinesApiRequest req = new HeadlinesApiRequest()
         .headlines().forCities();
+        
+    output(srv.call(req));    
+  }
+  
+  
+  @Test
+  public void newsByCity() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .news()
+        .forCity(City.Boston);
+        
+    output(srv.call(req));    
+  }
+
+  
+  @Test
+  public void headlinesByCity() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines()
+        .forCity(City.Boston);
         
     output(srv.call(req));    
   }
