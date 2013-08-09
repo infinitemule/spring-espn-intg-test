@@ -64,6 +64,19 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
     output(srv.call(req));    
   }
   
+  
+  @Test
+  public void newsByDate() {
+    
+    HeadlinesApiResponse response = srv.call(
+        new HeadlinesApiRequest()
+          .news()
+          .forCities()
+          .date("2012-07-24"));
+    
+    output(response);    
+  }
+  
   /*
    * 
    */
