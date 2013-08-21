@@ -15,6 +15,7 @@ import com.infinitemule.espn.api.sports.League;
 import com.infinitemule.espn.api.sports.Sport;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
 import com.infinitemule.espn.common.api.Groups;
+import com.infinitemule.espn.common.api.Language;
 import com.infinitemule.espn.common.api.Leagues;
 import com.infinitemule.espn.common.api.Sports;
 
@@ -70,6 +71,19 @@ public class AthletesApiServiceSpringIntgTest extends AbstractApiServiceSpringIn
        .id(70);
               
     output(srv.call(request));    
+  }
+  
+  
+  @Test
+  public void language() {
+    
+    AthletesApiRequest request = new AthletesApiRequest() 
+      .sport(Sports.Baseball)
+      .league(Leagues.MLB)
+      .language(Language.Spanish);
+    
+    output(srv.call(request));
+    
   }
 
   private void output(AthletesApiResponse resp) {
