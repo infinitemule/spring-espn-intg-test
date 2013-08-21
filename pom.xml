@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.infinitemule.espn</groupId>
   <artifactId>spring-espn-intg-test</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
