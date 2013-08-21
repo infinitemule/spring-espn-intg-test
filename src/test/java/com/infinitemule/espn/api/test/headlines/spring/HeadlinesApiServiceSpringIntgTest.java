@@ -114,6 +114,17 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
   }
   
   
+  @Test
+  public void newsForMagazine() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines()
+        .forEspnMagazine();
+
+    output(srv.call(req)); 
+  }
+  
+  
   private void output(HeadlinesApiResponse response) {
     
     for(Headline headline : response.getHeadlines()) {
