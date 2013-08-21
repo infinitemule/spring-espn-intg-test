@@ -13,6 +13,7 @@ import com.infinitemule.espn.api.now.NowApiResponse;
 import com.infinitemule.espn.api.now.NowApiService;
 import com.infinitemule.espn.api.now.NowLeague;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
+import com.infinitemule.espn.common.api.Content;
 import com.infinitemule.espn.common.api.Image;
 import com.infinitemule.espn.common.api.Language;
 import com.infinitemule.espn.common.api.NewsCategory;
@@ -67,7 +68,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   }
 
   @Test
-  public void nowLeague() {
+  public void league() {
     
     NowApiRequest request = new NowApiRequest()
       .latest()
@@ -78,7 +79,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   
 
   @Test
-  public void nowLeagueTeam() {
+  public void leagueTeam() {
     
     NowApiRequest request = new NowApiRequest()
       .latest()
@@ -90,7 +91,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   
   
   @Test
-  public void nowLanguage() {
+  public void language() {
     
     NowApiRequest request = new NowApiRequest()
       .latest()      
@@ -100,6 +101,16 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   }
   
 
+  
+  @Test
+  public void content() {
+    
+    NowApiRequest request = new NowApiRequest()
+      .latest()      
+      .content(Content.Blog, Content.Video);
+        
+    output(srv.call(request));
+  }
   
   private void output(NowApiResponse resp) {
     
