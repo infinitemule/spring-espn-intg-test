@@ -28,7 +28,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   public void latest() {
     
     NowApiRequest request = new NowApiRequest()
-      .now();
+      .latest();
 
       output(srv.call(request));
     
@@ -70,7 +70,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   public void nowLeague() {
     
     NowApiRequest request = new NowApiRequest()
-      .now()
+      .latest()
       .league(NowLeague.NFL);
         
     output(srv.call(request));
@@ -81,7 +81,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   public void nowLeagueTeam() {
     
     NowApiRequest request = new NowApiRequest()
-      .now()
+      .latest()
       .league(NowLeague.MLB)
       .teams(Teams.MLB.BOS);
         
@@ -93,7 +93,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   public void nowLanguage() {
     
     NowApiRequest request = new NowApiRequest()
-      .now()      
+      .latest()      
       .language(Language.Spanish);
         
     output(srv.call(request));
