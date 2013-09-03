@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+import com.infinitemule.espn.api.now.Disable;
 import com.infinitemule.espn.api.now.Feed;
 import com.infinitemule.espn.api.now.NowApiRequest;
 import com.infinitemule.espn.api.now.NowApiResponse;
@@ -111,6 +112,18 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
         
     output(srv.call(request));
   }
+  
+  
+  @Test
+  public void disable() {
+    
+    NowApiRequest request = new NowApiRequest()
+      .latest()      
+      .disable(Disable.Categories);
+        
+    output(srv.call(request));
+  }
+  
   
   private void output(NowApiResponse resp) {
     
