@@ -9,6 +9,7 @@ import static com.infinitemule.espn.common.lang.Console.println;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.infinitemule.espn.api.headlines.Disable;
 import com.infinitemule.espn.api.headlines.Headline;
 import com.infinitemule.espn.api.headlines.HeadlinesApiRequest;
 import com.infinitemule.espn.api.headlines.HeadlinesApiResponse;
@@ -123,6 +124,19 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
 
     output(srv.call(req)); 
   }
+  
+
+  @Test
+  public void disable() {
+    
+    HeadlinesApiRequest req = new HeadlinesApiRequest()
+        .headlines()
+        .forSports()
+        .disable(Disable.Related);
+
+    output(srv.call(req)); 
+  }
+
   
   
   private void output(HeadlinesApiResponse response) {
