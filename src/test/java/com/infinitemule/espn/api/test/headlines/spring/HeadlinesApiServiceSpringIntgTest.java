@@ -149,7 +149,9 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
       printfn("      %s - %s", headline.getPublished(), headline.getType());
       printfn("      %s", headline.getTitle());
       printfn("      %s", headline.getDescription());
-
+      println("  - Links:");      
+      printfn("      %s", headline.getLinkText());
+      printfn("      %s", headline.getMobileStory());
     }
   }
 }
