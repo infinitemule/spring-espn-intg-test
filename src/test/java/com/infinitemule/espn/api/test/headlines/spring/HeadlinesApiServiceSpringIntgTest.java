@@ -17,6 +17,7 @@ import com.infinitemule.espn.api.headlines.spring.HeadlinesApiServiceSpring;
 import com.infinitemule.espn.api.test.AbstractApiServiceSpringIntgTest;
 import com.infinitemule.espn.common.api.City;
 import com.infinitemule.espn.common.api.FantasySport;
+import com.infinitemule.espn.common.api.NewsCategory;
 
 public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTest {
 
@@ -149,9 +150,15 @@ public class HeadlinesApiServiceSpringIntgTest extends AbstractApiServiceSpringI
       printfn("      %s - %s", headline.getPublished(), headline.getType());
       printfn("      %s", headline.getTitle());
       printfn("      %s", headline.getDescription());
+      
       println("  - Links:");      
       printfn("      %s", headline.getLinkText());
       printfn("      %s", headline.getMobileStory());
+      
+      println("  - Categories:");      
+      for(NewsCategory cat : headline.getCategories()) {
+        printfn("      %s (%s)", cat.getDescription(), cat.getType());
+      }      
     }
   }
 }
