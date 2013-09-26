@@ -56,7 +56,8 @@ public class TeamsApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgT
     for(Sport sport : resp.getSports()) {
       for(League league : sport.getLeagues()) {
         for(Team team : league.getTeams()) {
-          System.out.printf("  -- %s %s\n", team.getLocation(), team.getName());
+          System.out.printf("  -- %s\t%s\t%s %s\n", 
+              team.getUid(), team.getId(), team.getLocation(), team.getName());          
         }
       }
     }
