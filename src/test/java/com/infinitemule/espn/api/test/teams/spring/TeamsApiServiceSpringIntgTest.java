@@ -48,10 +48,23 @@ public class TeamsApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgT
     output(srv.call(request));
                   
   }
+  
+  
+  @Test
+  public void teamsBySportAndLeagueAndGroupMlb() {
+        
+    TeamsApiRequest request = new TeamsApiRequest()
+      .sport(Sports.Baseball)
+      .league(Leagues.MLB)
+      .group(1);
+    
+    output(srv.call(request));
+                  
+  }
 
   
   @Test
-  public void teamsWithOptions() {
+  public void teamsWithOptionsVenues() {
     
     TeamsApiRequest request = new TeamsApiRequest()
       .sport(Sports.Football)
