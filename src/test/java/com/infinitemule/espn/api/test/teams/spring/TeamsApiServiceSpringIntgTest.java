@@ -51,6 +51,19 @@ public class TeamsApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgT
   
   
   @Test
+  public void teamsBySportAndLeagueAndGroupNfl() {
+        
+    TeamsApiRequest request = new TeamsApiRequest()
+      .sport(Sports.Football)
+      .league(Leagues.NFL)
+      .group(1);
+    
+    output(srv.call(request));
+                  
+  }
+  
+  
+  @Test
   public void teamsBySportAndLeagueAndGroupMlb() {
         
     TeamsApiRequest request = new TeamsApiRequest()
