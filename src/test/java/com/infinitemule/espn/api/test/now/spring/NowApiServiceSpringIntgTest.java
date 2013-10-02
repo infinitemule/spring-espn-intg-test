@@ -80,7 +80,7 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
   
 
   @Test
-  public void leagueTeam() {
+  public void leagueTeamMlb() {
     
     NowApiRequest request = new NowApiRequest()
       .latest()
@@ -89,7 +89,19 @@ public class NowApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgTes
         
     output(srv.call(request));
   }
+
   
+  @Test
+  public void leagueTeamNfl() {
+    
+    NowApiRequest request = new NowApiRequest()
+      .latest()
+      .league(NowLeague.NFL)
+      .teams(Teams.NFL.NE);
+        
+    output(srv.call(request));
+  }
+
   
   @Test
   public void language() {
