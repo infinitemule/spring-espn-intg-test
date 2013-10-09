@@ -74,6 +74,18 @@ public class TeamsApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgT
                   
   }
   
+
+  @Test
+  public void teamsBySportAndLeagueNba() {
+        
+    TeamsApiRequest request = new TeamsApiRequest()
+      .sport(Sports.Basketball)
+      .league(Leagues.NBA);    
+    
+    output(srv.call(request));
+                  
+  }
+  
   
   @Test
   public void teamsBySportAndLeagueAndGroupMlb() {
@@ -107,7 +119,7 @@ public class TeamsApiServiceSpringIntgTest extends AbstractApiServiceSpringIntgT
       for(League league : sport.getLeagues()) {
         for(Team team : league.getTeams()) {
           System.out.printf("  -- %s\t%s\t%s %s\n", 
-              team.getUid(), team.getId(), team.getLocation(), team.getName());          
+              team.getUid(), team.getId(), team.getLocation(), team.getName());
         }
       }
     }
